@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>How to Make Grilled Cheese</h1>
-    </header>
+    <div class="header">
+        <h1 class="main-title">Grilled Cheese Tutorial</h1>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#image-sequence-link">Images</a>
+            <a href="#drag-practice">Practice</a>
+        </div>
+    </div>
     <main>
+        <h3>How to Make Grilled Cheese</h3>
         <div class="checklist-directions">
             <input type="checkbox" id="item1" name="item1">
             <span class="checkmark"></span>
@@ -29,6 +35,7 @@
             <label for="item6">Continue grilling until cheese is melted.</label><br>
             <button type="button" class="clear-checklist">Clear All</button>
         </div>
+        <a id="image-sequence-link"></a>
         <div class="image-sequence">
             <div class="slide-images fade">
                 <div class="numbertext">1/6</div>
@@ -73,6 +80,7 @@
             <span class="dot" onclick="currentSlide(5)"></span>
             <span class="dot" onclick="currentSlide(6)"></span>
         </div>
+        <a id="drag-practice"></a>
         <div class="drag-and-drop">
             <div class="drag-container" id="drag-container">
                 <div class="drag-piece" id="drag5" draggable="true" ondragstart="drag(event)">
@@ -146,7 +154,6 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-
 
         function drag(ev) {
             ev.dataTransfer.setData("text", ev.target.parentElement.id);
